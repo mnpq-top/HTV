@@ -4,8 +4,6 @@ A live media player app（手机、电视直播软件）
 
 app兼容Android 4.4和IPv4，可播放hls、rtp等各种源。可在右侧release中下载，免费使用，如需定自定义源可修改源代码。
 
-![image](https://img2024.cnblogs.com/blog/33211/202405/33211-20240505115550874-1758625402.png)
-
 ## 关于app的说明
 -  **如果播放错误，可退出app重新进入，会自动切换源。**
 
@@ -32,27 +30,6 @@ Android系统的手机或电视上
 + 支持Android较低的版本，如Android 4.4等
 + 网络环境IPv4或IPv6均可
 + 直播源稳定，初始化为央视、卫视及影视及特色直播台。
-
-## 声明
-
-
-开发创作不易，如果您觉得有用或者节省了您宝贵的时间，请给作者小小赞下吧，3Q：
-<p>
-<img src="https://img2024.cnblogs.com/blog/33211/202405/33211-20240511115250248-1117416631.jpg" style="width: 300px; height: 300px;"/>
-<img src="https://img2024.cnblogs.com/blog/33211/202405/33211-20240511115429872-844027794.jpg" style="width: 300px; height: 300px;"/>
-</p>
-
-## 另有以下API：
-* 堪比capcut(剪映）的智能字幕
-* 人声背景音乐分离
-* 图文成片(根据文案搜索图片背景音乐及短视频等素材合成视频)
-* 音视频说话人区分
-* 提取音视频重点内容
-* 音视频内容总结
-* 视频字幕OCR提取
-* 图片、文档OCR识别，包含复杂表格识别、试卷识别、公式识别、PDF识别等
-
-如有以上需求的同仁可联系作者
 
 ## 致谢
 [my_tv](https://github.com/yaoxieyoulei/my_tv "my_tv")
