@@ -35,10 +35,10 @@ jobs:
       # 下载项目依赖
       - run: flutter pub get
       # 打包 APK
-      - run: flutter build apk --release
+      - run: flutter build apk --release --split-per-abi
       # 发布到 Release
       - name: Release apk
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: "build/app/outputs/flutter-apk/app-release.apk"
+          artifacts: "build/app/outputs/flutter-apk/"
