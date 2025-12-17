@@ -29,20 +29,11 @@ class IptvUtil {
 
   /// 获取缓存直播源文件
   static Future<File> _getCacheFile() async {
-    return File('${(await getTemporaryDirectory()).path}/iptv.txt');
+    return '';
   }
 
   /// 获取缓存直播源
   static Future<String> _getCache() async {
-    try {
-      final cacheFile = await _getCacheFile();
-      if (await cacheFile.exists()) {
-        return await cacheFile.readAsString();
-      }
-
-      return '';
-    } catch (e, st) {
-      _logger.handle(e, st);
       return '';
     }
   }
