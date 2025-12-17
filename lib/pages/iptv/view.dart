@@ -25,7 +25,7 @@ class IptvPage extends StatefulWidget {
 class _IptvPageState extends State<IptvPage> {
   final playerStore = GetIt.I<PlayerStore>();
   final iptvStore = GetIt.I<IptvStore>();
-  final updateStore = GetIt.I<UpdateStore>();
+  /// final updateStore = GetIt.I<UpdateStore>();
 
   final _focusNode = FocusNode();
 
