@@ -46,7 +46,7 @@ class IptvUtil {
     _logger.debug('获取远程直播源');
 
     final location = await getCurrentProvinceInfo();
-    var reqUrl='http://iptv.lan/m3u;
+    var reqUrl='http://iptv.lan/m3u';
     if(url!=null)
       reqUrl+="&ip="+url;
     final result = await RequestUtil.get(reqUrl);
