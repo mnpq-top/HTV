@@ -15,11 +15,7 @@ class IptvUtil {
 
   /// 获取远程直播源类型
   static String _getSourceType() {
-    if (Constants.iptvSource.endsWith('m3u')) {
-      return 'm3u';
-    } else {
-      return 'tvbox';
-    }
+    return 'm3u';
   }
 
   /// 获取远程直播源
@@ -126,11 +122,7 @@ class IptvUtil {
 
   /// 解析直播源
   static Future<List<IptvGroup>> _parseSource(String source) {
-    if (_getSourceType() == 'm3u') {
-      return _parseSourceM3u(source);
-    } else {
-      return _parseSourceTvbox(source);
-    }
+    return _parseSourceM3u(source);
   }
 
   /// 刷新并获取直播源
