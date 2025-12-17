@@ -1,7 +1,7 @@
 /// 常量
 class Constants {
   /// 直播源
-  static const iptvSource = 'http://iptv.m3u/m3u';
+  static const iptvSource = 'http://iptv.lan/m3u';
 
   /// 直播源缓存时间
   static const iptvSourceCacheKeepTime = 1000 * 60 * 60 * 24; // 24小时
