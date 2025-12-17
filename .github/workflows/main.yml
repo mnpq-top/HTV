@@ -40,4 +40,5 @@ jobs:
       - name: Release apk
         uses: ncipollo/release-action@v1
         with:
+          allowUpdates: true
           artifacts: "build/app/outputs/apk/release/*.apk"
