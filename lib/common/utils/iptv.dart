@@ -30,13 +30,8 @@ class IptvUtil {
     //final iptvSource = IptvSettings.customIptvSource.isNotEmpty ? IptvSettings.customIptvSource : Constants.iptvSource;
 
     _logger.debug('获取远程直播源');
-
-    final location = await getCurrentProvinceInfo();
     var reqUrl='http://iptv.lan/m3u';
-    if(url!=null)
-      reqUrl+="&ip="+url;
-    final result = await RequestUtil.get(reqUrl);
-    return result;
+    return reqUrl;
   }
 
   /// 获取缓存直播源文件
