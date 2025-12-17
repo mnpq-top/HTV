@@ -27,7 +27,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 apply plugin: 'kotlin-android'
 
 android {
-    namespace 'org.iptv.htv'
+    namespace 'org.tv.iptv'
     compileSdk flutter.compileSdkVersion
 
     compileOptions {
@@ -44,7 +44,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "org.iptv.htv"
+        applicationId "org.tv.iptv"
         minSdkVersion flutter.minSdkVersion
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
