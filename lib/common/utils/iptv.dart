@@ -15,43 +15,18 @@ class IptvUtil {
 
   /// 获取远程直播源类型
   static String _getSourceType() {
-   /* final iptvSource = IptvSettings.customIptvSource.isNotEmpty ? IptvSettings.customIptvSource : Constants.iptvSource;
+    final iptvSource = IptvSettings.customIptvSource.isNotEmpty ? IptvSettings.customIptvSource : Constants.iptvSource;
 
-    if (iptvSource.endsWith('.m3u')) {
+    if (iptvSource.endsWith('m3u')) {
       return 'm3u';
     } else {
       return 'tvbox';
-    }*/
-    return 'tvbox';
-  }
-
-  static Future<String> getCurrentProvinceInfo() async {
-    final response = await RequestUtil.get(
-        "https://ip.cn/api/index?ip=&type=0");
-
-    if(response!='') {
-      // 解析 json
-      final document = jsonDecode(response);
-
-      return document["address"].toString();
     }
-
-    return '';
   }
 
   /// 获取远程直播源
   static Future<String> _fetchSource(String? url) async {
-    //final iptvSource = IptvSettings.customIptvSource.isNotEmpty ? IptvSettings.customIptvSource : Constants.iptvSource;
-
-    _logger.debug('获取远程直播源');
-
-    final location = await getCurrentProvinceInfo();
-    var reqUrl='http://iptv.lan/iptv.m3u';
-    if(url!=null)
-      reqUrl+="&ip="+url;
-    final result = await RequestUtil.get(reqUrl);
-    return result;
-  }
+    final iptvSource = IptvSettings.customIptvSource.isNotEmpty ? IptvSettings.customIptvSource : Constants.iptvSource;
 
   /// 获取缓存直播源文件
   static Future<File> _getCacheFile() async {
