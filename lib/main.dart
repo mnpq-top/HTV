@@ -35,7 +35,7 @@ void main() async {
   // 注册全局Store
   GetIt.I.registerSingleton(PlayerStore());
   GetIt.I.registerSingleton(IptvStore());
-  GetIt.I.registerSingleton(UpdateStore());
+  /// GetIt.I.registerSingleton(UpdateStore());
 
   runApp(const MyApp());
 }
