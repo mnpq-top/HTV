@@ -190,40 +190,6 @@ class _SettingsMainState extends State<SettingsMain> {
           },
         ),
       ]),
-      SettingGroup(name: '直播源', items: [
-        SettingItem(
-          title: '直播源精简',
-          value: () => IptvSettings.iptvSourceSimplify ? '启用' : '禁用',
-          description: () => IptvSettings.iptvSourceSimplify ? '显示精简直播源(仅央视、地方卫视)' : '显示完整直播源',
-          onTap: () {
-            IptvSettings.iptvSourceSimplify = !IptvSettings.iptvSourceSimplify;
-            IptvSettings.epgCacheHash = 0;
-            iptvStore.refreshIptvList().then((_) => setState(() {}));
-          },
-        ),
-        SettingItem(
-          title: '自定义直播源',
-          value: () => IptvSettings.customIptvSource.isNotEmpty ? '已启用' : '未启用',
-          description: () => IptvSettings.customIptvSource.isNotEmpty ? '长按恢复默认' : '点击查看网址二维码',
-          onTap: () => _showServerQrcode(),
-          onLongTap: () {
-            IptvSettings.customIptvSource = '';
-            IptvSettings.iptvSourceCacheTime = 0;
-            iptvStore.refreshIptvList().then((_) => setState(() {}));
-          },
-        ),
-        SettingItem(
-          title: '直播源缓存',
-          value: () => _formatDuration(IptvSettings.iptvSourceCacheKeepTime),
-          description: () => IptvSettings.iptvSourceCacheTime > 0 ? "已缓存(点击清除缓存)" : "未缓存",
-          onTap: () {
-            if (IptvSettings.iptvSourceCacheTime > 0) {
-              IptvSettings.iptvSourceCacheTime = 0;
-              iptvStore.refreshIptvList().then((_) => setState(() {}));
-            }
-          },
-        ),
-      ]),
       SettingGroup(name: '节目单', items: [
         SettingItem(
           title: '节目单',
@@ -259,16 +225,7 @@ class _SettingsMainState extends State<SettingsMain> {
           },
         ),
       ]),
-      SettingGroup(name: '更多', items: [
-        SettingItem(
-          title: '更多设置',
-          value: () => '',
-          description: () => '访问以下网址进行配置：${HttpServerUtil.serverUrl}',
-          onTap: () => _showServerQrcode(),
-        ),
-      ]),
     ];
-
     _settingItemList = groupList.expand((element) => element.items).toList();
   }
 }
