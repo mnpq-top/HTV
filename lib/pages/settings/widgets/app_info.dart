@@ -49,7 +49,7 @@ class _SettingsAppInfoState extends State<SettingsAppInfo> {
             SizedBox(width: 20.w),
             Observer(
               builder: (_) => Text(
-                'v${updateStore.currentVersion}',
+                'v0.0.1',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.onBackground.withOpacity(0.8),
                   fontSize: 30.sp,
