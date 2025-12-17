@@ -159,41 +159,6 @@ class _SettingsMainState extends State<SettingsMain> {
           },
         ),
       ]),
-      SettingGroup(name: '节目单', items: [
-        SettingItem(
-          title: '节目单',
-          value: () => IptvSettings.epgEnable ? '启用' : '禁用',
-          description: () => '首次加载时可能会有跳帧风险',
-          onTap: () {
-            IptvSettings.epgEnable = !IptvSettings.epgEnable;
-            iptvStore.refreshEpgList().then((_) => setState(() {}));
-          },
-        ),
-        SettingItem(
-          title: '自定义节目单',
-          value: () => IptvSettings.customEpgXml.isNotEmpty ? '已启用' : '未启用',
-          description: () => IptvSettings.customEpgXml.isNotEmpty ? '长按恢复默认' : '点击查看网址二维码',
-          // onTap: () => _showServerQrcode(),
-          onLongTap: () {
-            IptvSettings.customEpgXml = '';
-            IptvSettings.epgXmlCacheTime = 0;
-            IptvSettings.epgCacheHash = 0;
-            iptvStore.refreshEpgList().then((_) => setState(() {}));
-          },
-        ),
-        SettingItem(
-          title: '节目单缓存',
-          value: () => '当天',
-          description: () => IptvSettings.epgXmlCacheTime > 0 ? "已缓存(点击清除缓存)" : "未缓存",
-          onTap: () {
-            if (IptvSettings.epgXmlCacheTime > 0) {
-              IptvSettings.epgXmlCacheTime = 0;
-              IptvSettings.epgCacheHash = 0;
-              iptvStore.refreshEpgList().then((_) => setState(() {}));
-            }
-          },
-        ),
-      ]),
     ];
     _settingItemList = groupList.expand((element) => element.items).toList();
   }
