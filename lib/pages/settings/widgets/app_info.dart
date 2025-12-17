@@ -39,7 +39,7 @@ class _SettingsAppInfoState extends State<SettingsAppInfo> {
           textBaseline: TextBaseline.alphabetic,
           children: [
             Text(
-              'HTV',
+              'IPTV',
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onBackground,
                 fontSize: 60.sp,
@@ -49,7 +49,7 @@ class _SettingsAppInfoState extends State<SettingsAppInfo> {
             SizedBox(width: 20.w),
             Observer(
               builder: (_) => Text(
-                'v0.0.0',
+                'v1',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.onBackground.withOpacity(0.8),
                   fontSize: 30.sp,
@@ -60,7 +60,7 @@ class _SettingsAppInfoState extends State<SettingsAppInfo> {
           ],
         ),
         Text(
-          'https://github.com/HTWMedia/HTV',
+          'http://iptv.lan',
           style: TextStyle(
             color: Theme.of(context).colorScheme.onBackground.withOpacity(0.8),
             fontSize: 30.sp,
