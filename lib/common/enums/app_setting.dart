@@ -9,7 +9,7 @@ enum AppSetting {
   firstLaunch,
 
   /// 上一次最新版本
-  lastLatestVersion,
+  ///lastLatestVersion,
 }
 
 /// 应用设置
