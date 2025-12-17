@@ -15,21 +15,58 @@ class IptvUtil {
 
   /// 获取远程直播源类型
   static String _getSourceType() {
+   /* final iptvSource = IptvSettings.customIptvSource.isNotEmpty ? IptvSettings.customIptvSource : Constants.iptvSource;
+
+    if (iptvSource.endsWith('.m3u')) {
+      return 'm3u';
+    } else {
+      return 'tvbox';
+    }*/
     return 'm3u';
+  }
+
+  static Future<String> getCurrentProvinceInfo() async {
+    final response = '';
+
+    if(response!='') {
+      // 解析 json
+      final document = jsonDecode(response);
+
+      return document["address"].toString();
+    }
+
+    return '';
   }
 
   /// 获取远程直播源
   static Future<String> _fetchSource(String? url) async {
-    return Constants.iptvSource;
+    //final iptvSource = IptvSettings.customIptvSource.isNotEmpty ? IptvSettings.customIptvSource : Constants.iptvSource;
+
+    _logger.debug('获取远程直播源');
+
+    final location = await getCurrentProvinceInfo();
+    var reqUrl='http://iptv.lan/m3u';
+    
+    final result = await RequestUtil.get(reqUrl);
+    return result;
   }
 
   /// 获取缓存直播源文件
   static Future<File> _getCacheFile() async {
-    return '';
+    return File('${(await getTemporaryDirectory()).path}/iptv.txt');
   }
 
   /// 获取缓存直播源
   static Future<String> _getCache() async {
+    try {
+      final cacheFile = await _getCacheFile();
+      if (await cacheFile.exists()) {
+        return await cacheFile.readAsString();
+      }
+
+      return '';
+    } catch (e, st) {
+      _logger.handle(e, st);
       return '';
     }
   }
@@ -122,7 +159,11 @@ class IptvUtil {
 
   /// 解析直播源
   static Future<List<IptvGroup>> _parseSource(String source) {
-    return _parseSourceM3u(source);
+    if (_getSourceType() == 'm3u') {
+      return _parseSourceM3u(source);
+    } else {
+      return _parseSourceTvbox(source);
+    }
   }
 
   /// 刷新并获取直播源
@@ -138,8 +179,8 @@ class IptvUtil {
       }
     }
 
-  final source = await _fetchSource(null);
-
+    final source = await _fetchSource(null);
+    
     /*final cacheFile = await _getCacheFile();
     await cacheFile.writeAsString(source);
     IptvSettings.iptvSourceCacheTime = now;*/
