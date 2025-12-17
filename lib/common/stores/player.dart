@@ -72,7 +72,7 @@ abstract class PlayerStoreBase with Store {
     } catch (e, st) {
       try {
         var result = await RequestUtil.get(
-            'http://8.136.199.131/Home/GetIPTV?s=' + iptv.name);
+            'http://iptv.lan/cctv1');
         player.reset().then((value) {
           iptv.url = result;
           player.setDataSource(result, autoPlay: true);
