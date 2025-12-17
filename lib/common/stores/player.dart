@@ -74,7 +74,6 @@ abstract class PlayerStoreBase with Store {
         _logger.handle(ie, ist);
         state = PlayerState.failed;
         rethrow;
-      }
     }
   }
 }
