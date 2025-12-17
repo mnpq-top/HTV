@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
-          java-version: "17"
+          java-version: "19"
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
       # 建立 Flutter 环境
@@ -31,7 +31,7 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: "stable"
-          flutter-version: 3.13.9
+          flutter-version: 3.24.x
       # 下载项目依赖
       - run: flutter pub get
       # 打包 APK
