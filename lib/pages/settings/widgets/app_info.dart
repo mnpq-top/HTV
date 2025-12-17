@@ -12,7 +12,7 @@ class SettingsAppInfo extends StatefulWidget {
 }
 
 class _SettingsAppInfoState extends State<SettingsAppInfo> {
-  final updateStore = GetIt.I<UpdateStore>();
+  /// final updateStore = GetIt.I<UpdateStore>();
 
   var _version = '';
 
