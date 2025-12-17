@@ -173,7 +173,7 @@ class _SettingsMainState extends State<SettingsMain> {
           title: '自定义节目单',
           value: () => IptvSettings.customEpgXml.isNotEmpty ? '已启用' : '未启用',
           description: () => IptvSettings.customEpgXml.isNotEmpty ? '长按恢复默认' : '点击查看网址二维码',
-          onTap: () => _showServerQrcode(),
+          // onTap: () => _showServerQrcode(),
           onLongTap: () {
             IptvSettings.customEpgXml = '';
             IptvSettings.epgXmlCacheTime = 0;
