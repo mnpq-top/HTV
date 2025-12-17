@@ -59,13 +59,6 @@ class _SettingsAppInfoState extends State<SettingsAppInfo> {
             ),
           ],
         ),
-        Text(
-          'http://iptv.lan',
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.onBackground.withOpacity(0.8),
-            fontSize: 30.sp,
-          ),
-        ),
       ],
     );
   }
