@@ -69,20 +69,7 @@ abstract class PlayerStoreBase with Store {
       state = PlayerState.playing;
       aspectRatio = player.value.size?.aspectRatio;
       resolution = player.value.size??Size.zero;
-    } catch (e, st) {
-      try {
-        var result = await RequestUtil.get(
-            'http://iptv.lan/cctv1');
-        player.reset().then((value) {
-          iptv.url = result;
-          player.setDataSource(result, autoPlay: true);
-        });
-
-        state = PlayerState.playing;
-        aspectRatio = player.value.size?.aspectRatio;
-        resolution = player.value.size??Size.zero;
-      }
-      catch(ie,ist) {
+    } catch(ie,ist) {
         errorInfo = ie.toString();
         _logger.handle(ie, ist);
         state = PlayerState.failed;
