@@ -33,7 +33,7 @@ jobs:
       # 下载项目依赖
       - run: flutter pub get
       # 打包 APK
-      - run: flutter build apk --release --split-per-abi --target-platform android-arm64,android-arm
+      - run: flutter build apk --release --split-per-abi
       # 发布到 Release
       - name: Release apk
         uses: ncipollo/release-action@v1
