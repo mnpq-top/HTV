@@ -60,7 +60,7 @@ class _SettingsAppInfoState extends State<SettingsAppInfo> {
           ],
         ),
         Text(
-          'https://github.com/HTWMedia/HTV',
+          'https://github.com/mnpq-top/HTV',
           style: TextStyle(
             color: Theme.of(context).colorScheme.onBackground.withOpacity(0.8),
             fontSize: 30.sp,
