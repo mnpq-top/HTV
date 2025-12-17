@@ -54,41 +54,10 @@ class _SettingsMainState extends State<SettingsMain> {
     }
   }
 
-  void _showServerQrcode() {
-    NavigatorUtil.push(
-      context,
-      Center(
-        child: Container(
-          decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.onBackground,
-            borderRadius: BorderRadius.circular(20).r,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8),
-            child: SizedBox(
-              height: 200.h,
-              width: 200.h,
-              child: PrettyQrView.data(
-                data: HttpServerUtil.serverUrl,
-                decoration: PrettyQrDecoration(
-                  shape: PrettyQrSmoothSymbol(
-                    color: Theme.of(context).colorScheme.background,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   void initState() {
     super.initState();
     refreshSettingGroupList();
-
-    HttpServerUtil.init().then((_) => setState(() {}));
   }
 
   @override
