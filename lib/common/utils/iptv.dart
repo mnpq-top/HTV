@@ -15,20 +15,16 @@ class IptvUtil {
 
   /// 获取远程直播源类型
   static String _getSourceType() {
-   final iptvSource = IptvSettings.customIptvSource.isNotEmpty ? IptvSettings.customIptvSource : Constants.iptvSource;
-
-    if (iptvSource.endsWith('m3u')) {
+    if (Constants.iptvSource.endsWith('m3u')) {
       return 'm3u';
     } else {
       return 'tvbox';
     }
-    return 'm3u';
   }
 
   /// 获取远程直播源
   static Future<String> _fetchSource(String? url) async {
-    final iptvSource = IptvSettings.customIptvSource.isNotEmpty ? IptvSettings.customIptvSource : Constants.iptvSource;
-    return iptvSource;
+    return Constants.iptvSource;
   }
 
   /// 获取缓存直播源文件
