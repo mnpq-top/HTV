@@ -40,7 +40,7 @@ class SettingsMain extends StatefulWidget {
 
 class _SettingsMainState extends State<SettingsMain> {
   final iptvStore = GetIt.I<IptvStore>();
-  final updateStore = GetIt.I<UpdateStore>();
+  /// final updateStore = GetIt.I<UpdateStore>();
 
   late final List<SettingItem> _settingItemList;
 
@@ -171,27 +171,6 @@ class _SettingsMainState extends State<SettingsMain> {
   void refreshSettingGroupList() {
     final groupList = [
       SettingGroup(name: '应用', items: [
-        SettingItem(
-          title: '应用更新',
-          value: () => updateStore.hasUpdate ? '新版本' : '无更新',
-          description: () => '最新版本：${updateStore.latestRelease.tagName} ${updateStore.hasUpdate ? '（长按更新）' : ''}',
-          onTap: () {
-            if (updateStore.hasUpdate) {
-              showDialog(
-                context: context,
-                builder: (_) => AlertDialog(
-                  title: Text(updateStore.latestRelease.tagName),
-                  content: SingleChildScrollView(
-                    child: Text(updateStore.latestRelease.description),
-                  ),
-                ),
-              );
-            }
-          },
-          onLongTap: () {
-            updateStore.downloadAndInstall();
-          },
-        ),
         SettingItem(
           title: '开机自启',
           value: () => AppSettings.bootLaunch ? '启用' : '禁用',
