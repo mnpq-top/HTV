@@ -7,7 +7,6 @@ import 'package:video_player_example/common/widgets/delay_renderer.dart';
 import 'package:video_player_example/pages/panel/widgets/iptv_ch.dart';
 import 'package:video_player_example/pages/panel/widgets/iptv_info.dart';
 import 'package:video_player_example/pages/panel/widgets/iptv_list.dart';
-import 'package:video_player_example/pages/panel/widgets/player_info.dart';
 import 'package:video_player_example/pages/panel/widgets/time.dart';
 
 import '../../common/enums/debug_setting.dart';
@@ -72,8 +71,6 @@ class _PanelPageState extends State<PanelPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             PanelIptvInfo(),
-            SizedBox(height: 30.h),
-            PanelPlayerInfo(),
             SizedBox(height: 30.h),
             const PanelIptvList(),
           ].delayed(enable: DebugSettings.delayRender),
