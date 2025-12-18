@@ -1,13 +1,13 @@
 /// 常量
 class Constants {
   /// 直播源
-  static const iptvSource = 'http://iptv.lan/m3u';
+  static const iptvSource = 'https://iptv.mnpq.top/m3u';
 
   /// 直播源缓存时间
   static const iptvSourceCacheKeepTime = 1000 * 60 * 60 * 24; // 24小时
 
   /// epg xml
-  static const iptvEpgXml = 'http://iptv.lan/xml';
+  static const iptvEpgXml = 'https://iptv.mnpq.top/xml';
 
   /// epg 刷新时间阈值（小时）
   static const epgRefreshTimeThreshold = 6; // 不到6点不刷新
@@ -16,7 +16,7 @@ class Constants {
   static const githubReleaseLatest = 'https://api.github.com/repos/mnpq-top/HTV/releases/latest';
 
   /// github代理加速地址
-  static const githubProxy = 'http://proxy.lan/';
+  static const githubProxy = 'https://gh.mnpq.top/';
 
   /// 设置服务器端口
   static const httpServerPort = 10381;
