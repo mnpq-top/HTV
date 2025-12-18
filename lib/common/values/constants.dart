@@ -1,13 +1,13 @@
 /// 常量
 class Constants {
   /// 直播源
-  static const iptvSource = 'https://iptv.mnpq.top/m3u';
+  static const iptvSource = 'http://iptv.lan/m3u';
 
   /// 直播源缓存时间
   static const iptvSourceCacheKeepTime = 1000 * 60 * 60 * 24; // 24小时
 
   /// epg xml
-  static const iptvEpgXml = 'https://iptv.mnpq.top/xml';
+  static const iptvEpgXml = 'http://iptv.lan/xml';
 
   /// epg 刷新时间阈值（小时）
   static const epgRefreshTimeThreshold = 6; // 不到6点不刷新
