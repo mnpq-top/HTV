@@ -7,7 +7,7 @@ class Constants {
   static const iptvSourceCacheKeepTime = 1000 * 60 * 60 * 24; // 24小时
 
   /// epg xml
-  static const iptvEpgXml = 'https://live.fanmingming.com/e.xml';
+  static const iptvEpgXml = 'http://iptv.lan/xml';
 
   /// epg 刷新时间阈值（小时）
   static const epgRefreshTimeThreshold = 6; // 不到6点不刷新
@@ -16,7 +16,7 @@ class Constants {
   static const githubReleaseLatest = 'https://api.github.com/repos/mnpq-top/HTV/releases/latest';
 
   /// github代理加速地址
-  static const githubProxy = 'https://mirror.ghproxy.com/';
+  static const githubProxy = 'http://proxy.lan/';
 
   /// 设置服务器端口
   static const httpServerPort = 10381;
