@@ -24,10 +24,6 @@ class _PanelIptvListState extends State<PanelIptvList> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextButton(
-          onPressed: (){iptvStore.updateIptvList(iptvStore.currentIptv.url);},
-          child: Text('刷新'),
-        ),
         SizedBox(
           height: 280.h,
           child: Observer(builder: (context) {
